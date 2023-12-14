@@ -1,0 +1,47 @@
+.loginPage {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%,0);
+}
+
+.loginTitle {
+  margin-top: 80px;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.loginContent {
+  margin-top: 8px;
+}
+
+button {
+  margin-top: 50px;
+}
+
+.input {
+  width: 100%;
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.input::placeholder {
+  color: #dadada;
+}
+
+.loginButton {
+  width: 50%;
+  height: 40px;
+  border: none;
+  background-color: #353535;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.joinButton {
+  width: 50%;
+  height: 40px;
+  background-color: #FFFFFF;
+  color: #353535;
+  cursor: pointer;
+}
