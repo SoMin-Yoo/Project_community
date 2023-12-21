@@ -10,6 +10,9 @@ const Write = () => {
       <div>
         <textarea id="movie_content" placeholder="내용을 입력하세요."></textarea>
       </div>
+      <div>
+        <button>등록</button>
+      </div>
     </div>
   );
 };

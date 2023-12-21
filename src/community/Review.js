@@ -3,8 +3,8 @@ import React from "react";
 const Board = ({ idx, movieTitle, contents, createdBy }) => {
   return (
     <div>
-      <h2>{movieTitle}</h2>
-      <h5>{createdBy}</h5>
+      <h1>{movieTitle}</h1>
+      <h2>{createdBy}</h2>
       <hr />
       <p>{contents}</p>
     </div>
