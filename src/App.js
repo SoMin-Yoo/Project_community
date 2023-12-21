@@ -1,4 +1,3 @@
-import './App.css';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from './components/Header';
 import Home from "./pages/Home";
@@ -6,8 +5,10 @@ import Login from "./pages/Login";
 import Netflix from "./pages/Netflix";
 import Tving from "./pages/Tving";
 import Disneyplus from "./pages/Disneyplus";
+import Join from "./pages/Join"
+import Netflixcontent from "./community/Netflixcontent";
 
-function App() {
+function Router() {
   return (
     <div className='root-wrap'>
       <BrowserRouter>
@@ -18,10 +19,12 @@ function App() {
           <Route path="/netflix" element={<Netflix/>} />
           <Route path="/tving" element={<Tving />} />
           <Route path="/disneyplus" element={<Disneyplus />} />
+          <Route path="/Join" element={<Join />} />
+          <Route path="/Netflixcontent" element={<Netflixcontent />} />
         </Routes>
       </BrowserRouter>
     </div>
   );
 }
 
-export default App;
+export default Router;
