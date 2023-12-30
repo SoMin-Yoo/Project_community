@@ -5,8 +5,9 @@ import Login from "./pages/Login";
 import Netflix from "./pages/Netflix";
 import Tving from "./pages/Tving";
 import Disneyplus from "./pages/Disneyplus";
-import Join from "./pages/Join"
-import Netflixcontent from "./community/Netflixcontent";
+import Write from "./community/Write";
+import Auth from "./Auth";
+
 
 function Router() {
   return (
@@ -19,8 +20,8 @@ function Router() {
           <Route path="/netflix" element={<Netflix/>} />
           <Route path="/tving" element={<Tving />} />
           <Route path="/disneyplus" element={<Disneyplus />} />
-          <Route path="/Join" element={<Join />} />
-          <Route path="/Netflixcontent" element={<Netflixcontent />} />
+          <Route path="/Write" element={<Write />} />
+          <Route path="/Auth" element={<Auth />} />
         </Routes>
       </BrowserRouter>
     </div>

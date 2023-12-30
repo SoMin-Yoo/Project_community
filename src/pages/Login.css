@@ -4,15 +4,11 @@
   transform: translate(-50%,0);
 }
 
-.loginTitle {
+h2 {
   margin-top: 80px;
   font-size: 30px;
   font-weight: 700;
   margin-bottom: 30px;
-}
-
-.loginContent {
-  margin-top: 8px;
 }
 
 button {
@@ -23,6 +19,7 @@ button {
   width: 100%;
   font-size: 20px;
   font-weight: 100;
+  margin-top: 8px;
 }
 
 .input::placeholder {

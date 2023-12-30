@@ -1,13 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Netflix.css";
 
-export default function Netflix() {
+export default function Tving() {
 
   return (
     <div>
-      <div className="netflixLogo">
-        넷플릭스
+      <div className="tvingLogo">
+        티빙
       </div>
       <div>
         <input type="text" className="'search_input" name="search" />
@@ -16,7 +15,7 @@ export default function Netflix() {
       <div>
         <button className="writeButton">
           <Link className="writePage" to="/Write">
-            글 쓰기
+            글쓰기
           </Link>
         </button>
       </div>

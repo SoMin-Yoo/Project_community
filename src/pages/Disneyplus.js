@@ -15,7 +15,7 @@ export default function Disneyplus() {
       <div>
         <button className="writeButton">
           <Link className="writePage" to="/Write">
-            글 쓰기
+            글쓰기
           </Link>
         </button>
       </div>

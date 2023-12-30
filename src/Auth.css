@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+
+h3 {
+  margin-top: 80px;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.button {
+  width: 50%;
+  height: 40px;
+  border: none;
+  background-color: #353535;
+  color: #FFFFFF;
+  cursor: pointer;
+}
