@@ -8,6 +8,7 @@ import Disneyplus from "./pages/Disneyplus";
 import Write from "./community/Write";
 import Auth from "./Auth";
 import UserDetail from "./pages/users/[id]";
+import UserEdit from "./pages/users/UserEdit";
 
 function Router() {
   return (
@@ -23,6 +24,7 @@ function Router() {
           <Route path="/Write" element={<Write />} />
           <Route path="/Auth" element={<Auth />} />
           <Route path="/users/:id" element={<UserDetail />} />
+          <Route path="/users/:id/edit" element={<UserEdit />} />
         </Routes>
       </BrowserRouter>
     </div>

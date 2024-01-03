@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
-import { doc, getDoc, updateDoc, deleteDoc } from 'firebase/firestore';
+import { useParams, useNavigate } from 'react-router-dom';
+import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import db from '../../db';
 
-function UserDetail() {
+function UserEdit() {
   const { id } = useParams();
   const [subject, setSubject] = useState('');
   const [content, setContent] = useState('');
@@ -34,36 +34,40 @@ function UserDetail() {
     try {
       const userDocRef = doc(db, 'users', id);
       await updateDoc(userDocRef, {
-        subject: 'Updated Subject', // 여기에서 새로운 주제를 설정
-        // content: 'Updated Content', // content도 필요한 경우 주석 해제 후 업데이트
+        subject: subject, // 수정된 주제
+        content: content, // 수정된 내용
       });
       console.log('Document successfully updated!');
+      navigate(`/users/${id}`); // 수정 후 상세 페이지로 이동
     } catch (error) {
       console.error('Error updating document:', error);
     }
   };
 
-  const handleDelete = async () => {
-    try {
-      const userDocRef = doc(db, 'users', id);
-      await deleteDoc(userDocRef);
-      console.log('Document successfully deleted!');
-      navigate('/Netflix'); // 삭제 후 목록 페이지로 이동
-    } catch (error) {
-      console.error('Error deleting document:', error);
-    }
-  };
-
   return (
     <div>
-      <h1>{subject}</h1>
-      <p>{content}</p>
-      <Link to={`/users/${id}/edit`}>수정하기</Link>
-      <button onClick={handleDelete}>삭제하기</button>
+      <h1>Edit User</h1>
+      <div>
+        <label htmlFor="subject">Subject:</label>
+        <input
+          type="text"
+          id="subject"
+          value={subject}
+          onChange={(e) => setSubject(e.target.value)}
+        />
+      </div>
+      <div>
+        <label htmlFor="content">Content:</label>
+        <textarea
+          id="content"
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
+        />
+      </div>
+      <button onClick={handleUpdate}>Update User</button>
     </div>
   );
 }
 
-export default UserDetail;
-
+export default UserEdit;
 
