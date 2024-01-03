@@ -7,7 +7,7 @@ import Tving from "./pages/Tving";
 import Disneyplus from "./pages/Disneyplus";
 import Write from "./community/Write";
 import Auth from "./Auth";
-
+import UserDetail from "./pages/users/[id]";
 
 function Router() {
   return (
@@ -22,6 +22,7 @@ function Router() {
           <Route path="/disneyplus" element={<Disneyplus />} />
           <Route path="/Write" element={<Write />} />
           <Route path="/Auth" element={<Auth />} />
+          <Route path="/users/:id" element={<UserDetail />} />
         </Routes>
       </BrowserRouter>
     </div>

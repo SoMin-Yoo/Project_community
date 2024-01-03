@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import db from "../db";
-import { collection, getDocs, orderBy, query, onSnapshot } from 'firebase/firestore'
+import { collection, orderBy, query, onSnapshot } from 'firebase/firestore'
 import { DateTime } from "luxon";
 
 export default function Netflix() {
