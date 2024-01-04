@@ -4,18 +4,20 @@ import { Link } from "react-router-dom";
 
 export default function Header() {
   const [isLoggined, setIsLoggined] = useState(false);
+  const [userName, setUserName] = useState('');
   const auth = getAuth();
 
   useEffect(()=>{
     onAuthStateChanged(auth, (user)=>{
       if(user){
         setIsLoggined(true);
-      }else{
+        setUserName(user.displayName || ''); // Firebase에서 제공하는 displayName을 사용
+      } else {
         setIsLoggined(false);
       }
     });
-  }, []);
-  
+  }, [auth]);
+
   const logOut = () => {
     signOut(auth).then((result) => {
       console.log(result, "log out");
@@ -29,12 +31,17 @@ export default function Header() {
           OTT COMMUNITY
         </Link> 
         <ul>
+          {isLoggined && (
+            <span className="header-welcome"> {`${userName} 님 환영합니다.`} </span>
+          )}
           {!isLoggined ? (
             <Link className="header-login" to="/Login">
               로그인/회원가입
             </Link>
           ) : (
-            <button onClick={logOut}>로그아웃</button>
+            <>
+              <button onClick={logOut}>로그아웃</button>
+            </>
           )}  
         </ul> 
       </div>

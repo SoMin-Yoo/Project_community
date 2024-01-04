@@ -34,7 +34,7 @@ function Auth() {
     try {
       // Firebase에 회원가입 요청
       await createUserWithEmailAndPassword(auth, email, password, name);
-      navigate("/Login");
+      navigate("/");
     } catch (error) {
       // 에러 메시지 표시
       setError("이미 존재하는 이메일입니다.");
