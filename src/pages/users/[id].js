@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { doc, getDoc, updateDoc, deleteDoc } from 'firebase/firestore';
 import db from '../../db';
+import CommentList from './Commentlist';
+import CommentForm from './Commentform';
 
 function UserDetail() {
   const { id } = useParams();
@@ -34,8 +36,7 @@ function UserDetail() {
     try {
       const userDocRef = doc(db, 'users', id);
       await updateDoc(userDocRef, {
-        subject: 'Updated Subject', // 여기에서 새로운 주제를 설정
-        // content: 'Updated Content', // content도 필요한 경우 주석 해제 후 업데이트
+        subject: 'Updated Subject',
       });
       console.log('Document successfully updated!');
     } catch (error) {
@@ -48,7 +49,7 @@ function UserDetail() {
       const userDocRef = doc(db, 'users', id);
       await deleteDoc(userDocRef);
       console.log('Document successfully deleted!');
-      navigate('/Netflix'); // 삭제 후 목록 페이지로 이동
+      navigate('/Netflix');
     } catch (error) {
       console.error('Error deleting document:', error);
     }
@@ -60,10 +61,12 @@ function UserDetail() {
       <p>{content}</p>
       <Link to={`/users/${id}/edit`}>수정하기</Link>
       <button onClick={handleDelete}>삭제하기</button>
+
+      {/* 댓글 목록과 댓글 작성 폼 추가 */}
+      <CommentList userId={id} />
+      <CommentForm userId={id} />
     </div>
   );
 }
 
 export default UserDetail;
-
-
