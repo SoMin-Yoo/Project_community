@@ -11,7 +11,11 @@ export default function Home() {
             <img 
             src="https://cdn.icon-icons.com/icons2/3053/PNG/512/netflix_macos_bigsur_icon_189917.png" 
             alt="넷플릭스 로고" />
+            <p>광고형스탠다드</p>
+            <p>스탠다드</p>
+            <p>프리미엄</p>
           </Link>
+          
         </li>
         <li>
           <Link className="platform-tving" to="/Tving">
